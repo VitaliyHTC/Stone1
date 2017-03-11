@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263838</color>
+    <color name="colorPrimaryDark">#263838</color>
+    <color name="colorPrimaryButton">#263838</color>
+    <color name="colorAccent">#f44336</color>
+
+    <color name="detail_activity_key_text_color">#757575</color>
+    <color name="detail_activity_value_text_color">#212121</color>
+
+    <color name="background_high">#fce4ec</color>
+    <color name="background_medium">#ffffff</color>
+</resources>
