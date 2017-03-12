@@ -16,7 +16,8 @@ public class TimerService extends Service {
 
     SimpleDateFormat simpleDateFormat;
 
-    private int counter;
+    private int mStartCounter;
+    private int mBroadcastsCounter;
 
     @Nullable
     @Override
@@ -27,8 +28,8 @@ public class TimerService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        counter++;
-        if(counter == 1){
+        mStartCounter++;
+        if(mStartCounter == 1){
             makeTimer();
         }
 
@@ -40,16 +41,19 @@ public class TimerService extends Service {
 
         scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
             public void run() {
-                Intent intent = new Intent(Config.TAG_BROADCAST_RECEIVER);
+                mBroadcastsCounter++;
+                if(mBroadcastsCounter>1){
+                    Intent intent = new Intent(Config.TAG_BROADCAST_RECEIVER);
 
-                Calendar calendar = Calendar.getInstance();
-                simpleDateFormat = new SimpleDateFormat("HH:mm");
-                String time = simpleDateFormat.format(calendar.getTime());
+                    Calendar calendar = Calendar.getInstance();
+                    simpleDateFormat = new SimpleDateFormat("HH:mm");
+                    String time = simpleDateFormat.format(calendar.getTime());
 
-                intent.putExtra(Config.TAG_TIMER_SERVICE_TIME, time);
-                intent.putExtra(Config.TAG_TIMER_SERVICE_IMAGE, "http://lorempixel.com/400/400/");
+                    intent.putExtra(Config.TAG_TIMER_SERVICE_TIME, time);
+                    intent.putExtra(Config.TAG_TIMER_SERVICE_IMAGE, "http://lorempixel.com/400/400/");
 
-                LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                }
             }
         }, 0, 2, TimeUnit.MINUTES);
     }

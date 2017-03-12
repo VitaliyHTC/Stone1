@@ -27,6 +27,11 @@ public class MainActivity extends CoreActivity {
     private ProductsDataManager mProductsDataManager = new ProductsDataManager(this);
 
     private RetainedFragment mRetainedFragment;
+
+    /**
+     * Same list as in adapter! Any changes in adapter products reflected in this list and
+     * vise versa.
+     */
     private List<Product> mProducts;
 
     private RecyclerView mRecyclerView;
@@ -83,21 +88,20 @@ public class MainActivity extends CoreActivity {
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback =
                 new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
 
-            @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
-                                  RecyclerView.ViewHolder target) {
-                return false;
-            }
+                    @Override
+                    public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                                          RecyclerView.ViewHolder target) {
+                        return false;
+                    }
 
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                //Remove swiped item from list and notify the RecyclerView
-                int position = viewHolder.getAdapterPosition();
-                mProductAdapter.removeAt(position);
-                mProducts.remove(position);
-                mRetainedFragment.setProducts(mProducts);
-            }
-        };
+                    @Override
+                    public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                        //Remove swiped item from list and notify the RecyclerView
+                        int position = viewHolder.getAdapterPosition();
+                        mProductAdapter.removeAt(position);
+                        mRetainedFragment.setProducts(mProducts);
+                    }
+                };
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
 

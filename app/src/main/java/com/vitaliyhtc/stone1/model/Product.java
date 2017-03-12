@@ -587,8 +587,8 @@ public class Product {
     public static void loadImage(ImageView view, String imageUrl) {
         Picasso.with(view.getContext())
                 .load(imageUrl)
-                .placeholder(R.drawable.list_item_bg)
-                .error(R.drawable.ic_broken_image)
+                //.placeholder(R.drawable.list_item_bg)
+                //.error(R.drawable.ic_broken_image)
                 .into(view);
     }
 

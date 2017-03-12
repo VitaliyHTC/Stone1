@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    app:imageUrl="@{product.imageUrl}"
+                    app:imageUrl="@{product.imageThumbUrl}"
                     android:id="@+id/image_view_product_big"
                     android:layout_width="256dp"
                     android:layout_height="256dp"
