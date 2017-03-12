@@ -11,10 +11,11 @@ For both activities realized service that send broadcast intent with time string
 <br>
 Not solved problem with back navigation, when image can be drawed over toolbar in animation.<br>
 <br><br>
-<b>Stone1_Build_2.apk _2017.03.12 12:04</b>:<br>
-CRC32: 27D2CFDC<br>
-MD5: 07E482BE3FC09C1C52428C92484FF3A1<br>
-SHA-1: 829B5EC742C40D73019EDCB2C9608417F0F6BBFA<br>
+<b>Stone1_Build_3.apk _2017.03.12 14:42</b>:<br>
+CRC32: AC52F185<br>
+MD5: C0138EE4079E41BD610EA6985C15A994<br>
+SHA-1: 2C06A413AC6C2A09A536B5366CC3A21CA4239D36<br>
 <br>
 Download links:<br>
-<a href="https://drive.google.com/open?id=0BzoKZrHsxcSbMmk3NUtzUDRqc0E" target="_blank">Google Drive</a><br>
+<a href="https://drive.google.com/open?id=0BzoKZrHsxcSbU3RGSTlpSmJJY2c" target="_blank">Google Drive</a><br>
+<a href="https://yadi.sk/d/mB4SDZKU3Fba99" target="_blank">Yandex Disk</a><br>
